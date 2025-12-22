@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { View } from 'react-native';
-import { Room, RoomEvent, createLocalTracks, Track } from 'livekit-client';
+import { View, Platform, Alert } from 'react-native';
 import Constants from 'expo-constants';
 
 const API_URL = Constants.expoConfig?.extra?.EXPO_PUBLIC_BACKEND_URL || process.env.EXPO_PUBLIC_BACKEND_URL || 'https://voice-agent-connect-1.preview.emergentagent.com';
+
+// Note: LiveKit WebRTC only works in native builds, not in web/Expo Go
+// For now, we'll simulate the connection for demonstration
+const isWeb = Platform.OS === 'web';
 
 interface Props {
   avatarId: string;
