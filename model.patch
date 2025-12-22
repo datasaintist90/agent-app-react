@@ -1,0 +1,13 @@
+diff --git a/backend/.env b/backend/.env
+index 0f4322c..41c3787 100644
+--- a/backend/.env
++++ b/backend/.env
+@@ -1,2 +1,5 @@
+ MONGO_URL="mongodb://localhost:27017"
+-DB_NAME="test_database"
+\ No newline at end of file
++DB_NAME="test_database"
++LIVEKIT_URL=wss://test-2zavyzxr.livekit.cloud
++LIVEKIT_API_KEY=APIKxa83FUZVRdv
++LIVEKIT_API_SECRET=1Lt7gGgQXYffkVuXnlv4F92wQovInCNtJeBI6SmbJKAB
+\ No newline at end of file
