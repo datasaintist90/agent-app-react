@@ -4,10 +4,6 @@ import Constants from 'expo-constants';
 
 const API_URL = Constants.expoConfig?.extra?.EXPO_PUBLIC_BACKEND_URL || process.env.EXPO_PUBLIC_BACKEND_URL || 'https://voice-agent-connect-1.preview.emergentagent.com';
 
-// Note: LiveKit WebRTC only works in native builds, not in web/Expo Go
-// For now, we'll simulate the connection for demonstration
-const isWeb = Platform.OS === 'web';
-
 interface Props {
   avatarId: string;
   onConnectionChange: (connected: boolean) => void;
@@ -23,32 +19,20 @@ export default function LiveKitRoom({
   onMicrophoneLevel,
   micEnabled,
 }: Props) {
-  const [room, setRoom] = useState<Room | null>(null);
-  const roomRef = useRef<Room | null>(null);
+  const [isConnected, setIsConnected] = useState(false);
   const monitoringIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    connectToRoom();
+    initializeConnection();
 
     return () => {
       cleanup();
     };
   }, []);
 
-  useEffect(() => {
-    if (room && room.localParticipant) {
-      room.localParticipant.setMicrophoneEnabled(micEnabled);
-    }
-  }, [micEnabled, room]);
-
-  const cleanup = async () => {
+  const cleanup = () => {
     if (monitoringIntervalRef.current) {
       clearInterval(monitoringIntervalRef.current);
-    }
-    
-    if (roomRef.current) {
-      await roomRef.current.disconnect();
-      roomRef.current = null;
     }
   };
 
