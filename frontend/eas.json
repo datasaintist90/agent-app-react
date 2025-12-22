@@ -4,6 +4,7 @@
   },
   "build": {
     "development": {
+      "node": "22.11.0",
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
@@ -11,9 +12,12 @@
       }
     },
     "preview": {
+      "node": "22.11.0",
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "node": "22.11.0"
+    }
   },
   "submit": {
     "production": {}
