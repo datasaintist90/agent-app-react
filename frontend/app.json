@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Voice Agent",
-    "slug": "voice-agent",
+    "name": "VoiceAgent",
+    "slug": "voiceagent",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "voiceagent",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": false,
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
@@ -15,22 +15,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.voiceagent.app",
-      "infoPlist": {
-        "NSMicrophoneUsageDescription": "This app needs access to your microphone for voice conversations.",
-        "UIBackgroundModes": ["audio"]
-      }
+      "bundleIdentifier": "com.anonymous.voiceagent"
     },
     "android": {
-      "package": "com.voiceagent.app",
+      "package": "com.anonymous.voiceagent",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#000000"
-      },
-      "permissions": [
-        "RECORD_AUDIO",
-        "MODIFY_AUDIO_SETTINGS"
-      ]
+      }
     },
     "web": {
       "bundler": "metro",
