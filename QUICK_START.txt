@@ -1,0 +1,98 @@
+┌────────────────────────────────────────────────────────────────┐
+│                  VOICE AGENT APP - BUILD GUIDE                 │
+│                     Quick Reference Card                        │
+└────────────────────────────────────────────────────────────────┘
+
+📋 PREREQUISITES
+  ✅ expo-dev-client installed (v6.0.20)
+  ✅ eas.json configured
+  ✅ app.json updated with permissions
+  ✅ LiveKit credentials configured
+  ✅ Emergent LLM key configured
+  ✅ Voice agent code ready
+
+🚀 BUILD COMMANDS (Run these in your terminal)
+
+  1. Install EAS CLI (one-time):
+     npm install -g eas-cli
+
+  2. Login to Expo:
+     eas login
+
+  3. Build Android app:
+     cd /app/frontend
+     eas build --profile development --platform android
+
+  4. Track build progress:
+     eas build:list
+
+  5. Start voice agent (after build):
+     cd /app/backend
+     python3 voice_agent.py dev
+
+⏱️  TIMELINE
+  • Login: 2 minutes
+  • Build: 10-15 minutes
+  • Install: 5 minutes
+  • Total: ~20-25 minutes
+
+📱 AFTER BUILD COMPLETES
+
+  1. Download APK from provided URL
+  2. Transfer to Android phone
+  3. Install APK
+  4. Start voice agent on computer
+  5. Open app on phone
+  6. Grant microphone permission
+  7. Select Maya or Miles
+  8. Tap "Start a call"
+  9. Hear: "Hi! I'm Maya..."
+  10. Start talking!
+
+🎤 VOICE AGENT FEATURES
+  • Maya: Female, warm, empathetic (Nova voice)
+  • Miles: Male, laid-back, witty (Onyx voice)
+  • Uses OpenAI GPT-4o-mini for responses
+  • Uses OpenAI TTS for speech
+  • Powered by Emergent LLM key
+
+📞 TROUBLESHOOTING
+
+  Build fails:
+    → eas build:configure
+    → Check expo.dev dashboard
+
+  Voice not working:
+    → Check voice agent is running
+    → Grant microphone permission
+    → Check device volume
+
+  Agent not responding:
+    → ps aux | grep voice_agent
+    → Restart: python3 voice_agent.py dev
+
+🌐 WHAT WORKS NOW (Web)
+  ✅ UI/UX
+  ✅ Navigation
+  ✅ Token generation
+  ⚠️  Audio (demo mode only)
+
+🎯 WHAT WORKS AFTER BUILD (Native)
+  ✅ Everything above
+  ✅ REAL voice conversations
+  ✅ Microphone recording
+  ✅ AI voice responses
+  ✅ Full LiveKit integration
+
+📚 DOCUMENTATION
+  • BUILD_INSTRUCTIONS.md - Detailed guide
+  • NATIVE_BUILD_GUIDE.md - Complete setup
+  • VOICE_AGENT_SETUP.md - Agent details
+
+🎉 YOU'RE READY!
+   Run: eas login
+   Then: eas build --profile development --platform android
+
+────────────────────────────────────────────────────────────────
+Your voice agent app is ready for native deployment! 🚀🎤
+────────────────────────────────────────────────────────────────
