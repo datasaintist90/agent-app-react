@@ -52,7 +52,10 @@ export default function Index() {
             <Ionicons name="chevron-down" size={16} color="#fff" />
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.profileButton}>
+          <TouchableOpacity 
+            style={styles.profileButton}
+            onPress={() => router.push('/profile')}
+          >
             <Ionicons name="person-circle-outline" size={32} color="#fff" />
           </TouchableOpacity>
         </View>
