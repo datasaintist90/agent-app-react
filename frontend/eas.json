@@ -3,21 +3,6 @@
     "version": ">= 13.0.0"
   },
   "build": {
-    "development": {
-      "developmentClient": false,
-      "distribution": "internal",
-      "android": {
-        "buildType": "apk"
-      },
-      "node": "20.19.4"
-    },
-    "preview": {
-      "distribution": "internal",
-      "android": {
-        "buildType": "apk"
-      },
-      "node": "20.19.4"
-    },
     "production": {
       "android": {
         "buildType": "apk"
